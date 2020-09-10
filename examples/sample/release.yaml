@@ -1,0 +1,14 @@
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: KubernetesResource
+metadata:
+  name: sample
+spec:
+  forProvider:
+    object:
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: hello-world
+  providerConfigRef:
+    name: local-provider-config
+  reclaimPolicy: Delete
